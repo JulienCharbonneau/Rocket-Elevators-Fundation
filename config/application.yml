@@ -11,8 +11,8 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 google_map_api_key: AIzaSyCLwvADPK2vhk5ypz889HsenDU3yhSm19M
-twilio_account_sid: ACbe2941309c70f0f03975dc884b9e7ad4
-twilio_auth_token: 82b45d72abd442754aef3c037f03ad5a
-twilio_phone_number: "+18563861525"
-slack_api_token: xoxb-461156293569-4329447238295-DDxX96DasByY078fRrwcqcoY
+# twilio_account_sid: ACbe2941309c70f0f03975dc884b9e7ad4
+# twilio_auth_token: 82b45d72abd442754aef3c037f03ad5a
+# twilio_phone_number: "+18563861525"
+# slack_api_token: xoxb-461156293569-4329447238295-DDxX96DasByY078fRrwcqcoY
 freshdesk: HKdDXxuzqj74qW1WGoFO
