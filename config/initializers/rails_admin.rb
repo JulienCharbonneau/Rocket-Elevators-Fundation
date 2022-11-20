@@ -1,7 +1,5 @@
 require 'dropbox_api'
 require 'slack-ruby-client'
-require Rails.root.join('lib', 'rails_admin', 'customer_map.rb')
-RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::CustomerMap)
 
 
 RailsAdmin.config do |config|
@@ -39,8 +37,6 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-    customer_map
-    # playAudio
 
     ## With an audit adapter, you can add:
     # history_index
