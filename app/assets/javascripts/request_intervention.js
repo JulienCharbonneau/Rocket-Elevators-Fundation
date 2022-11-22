@@ -3,5 +3,3 @@ $(document).ready(function () {
     alert("The paragraph was clicked.");
   });
 });
-
-console.log("hello world");
