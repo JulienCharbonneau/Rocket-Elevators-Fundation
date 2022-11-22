@@ -12,7 +12,7 @@ class RequestInterventionController < ApplicationController
   def create 
     puts params
     request_intervention = RequestIntervention.new()
-    request_intervention.customer_id = params[:customer_id]
+    request_intervention.customer_id = params[:Customer]
     request_intervention.save()
   end
 
