@@ -1,0 +1,2 @@
+class RequestIntervention < ApplicationRecord
+end
