@@ -48,5 +48,11 @@ Rails.application.routes.draw do
 
   # form request intervention
   get '/request_intervention', to: 'request_intervention#intervention_form'
+
+  get '/request_intervention', to: 'request_interventions#intervention_form'
+  post '/request_intervention', to: 'request_intervention#create'
+  
+
+  # get 'get_building_by_customer/:customer_id', to: 'building#get_building_by_customer'
 end
 
