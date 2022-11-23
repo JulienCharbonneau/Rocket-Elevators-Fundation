@@ -6,6 +6,8 @@ $(function() {
     $("select#Battery").hide();
     $("select#Column").hide();
     $("select#Elevator").hide();
+    $("#description").hide();
+
   } 
   // get building for specific customer
   $("select#Customer").change(function(){
@@ -56,6 +58,7 @@ $(function() {
             },
             success: function(data){
               $("select#Battery").show();
+              $("#description").show();
               // Clear all options from Battery select
               $("select#Battery option").remove();
               //put in a empty default line
@@ -71,7 +74,7 @@ $(function() {
                    var id_value_string = $(this).val();
                    if (id_value_string == ""){
                     $("select#Column").hide();
-                    $("select#Elevator").hide();
+                    $("#description").hide();
                   }
                   $.ajax({
                     dataType: "json",
@@ -83,6 +86,7 @@ $(function() {
                     },
                     success: function(data){
                       $("select#Column").show();
+                     $("#description").show();
                       // Clear all options from Column select
                       $("select#Column option").remove();
                        //put in a empty default line
@@ -108,6 +112,7 @@ $(function() {
                             alert("Failed to submit : " + errorTextStatus + " ;" + error);
                           },
                           success: function(data){
+                            $("select#Elevator").show();
                             $("select#Elevator").show();
                             // Clear all options from Column select
                             $("select#Elevator option").remove();
