@@ -1,7 +1,7 @@
 class AddRequestInterventions < ActiveRecord::Migration[5.2]
   def change
     create_table :request_interventions do |t|
-      t.string :author
+      t.integer :author
       t.integer :customer_id
       t.integer :building_id
       t.integer :battery_id

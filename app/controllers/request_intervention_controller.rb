@@ -12,7 +12,18 @@ class RequestInterventionController < ApplicationController
   def create 
     puts params
     request_intervention = RequestIntervention.new()
+    request_intervention.author = current_user.id
     request_intervention.customer_id = params[:Customer]
+    request_intervention.building_id = params[:Building]
+    request_intervention.battery_id = params[:Battery]
+    request_intervention.column_id = params[:Column]
+    request_intervention.elevator_id = params[:Elevator]
+    request_intervention.report = params[:description]
+
+
+
+
+
     request_intervention.save()
   end
 

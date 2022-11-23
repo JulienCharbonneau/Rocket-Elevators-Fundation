@@ -187,7 +187,7 @@ ActiveRecord::Schema.define(version: 2022_11_22_185528) do
   end
 
   create_table "request_interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "author"
+    t.integer "author"
     t.integer "customer_id"
     t.integer "building_id"
     t.integer "battery_id"
