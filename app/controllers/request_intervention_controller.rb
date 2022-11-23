@@ -18,19 +18,10 @@ class RequestInterventionController < ApplicationController
     request_intervention.battery_id = params[:Battery]
     request_intervention.column_id = params[:Column]
     request_intervention.elevator_id = params[:Elevator]
+    request_intervention.employee_id = params[:Employee]
     request_intervention.report = params[:description]
-
-
-
-
-
     request_intervention.save()
   end
-
- 
-
-
-
 
 def get_building_by_customer
   @building = Building.where("customer_id = ?", params[:customer_id])

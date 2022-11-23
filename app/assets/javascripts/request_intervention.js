@@ -9,6 +9,8 @@ $(function() {
     $("select#Column").hide();
     $("select#Elevator").hide();
     $("#description").hide();
+    $("select#Employee").hide();
+
 
   } 
   // get building for specific customer
@@ -61,6 +63,7 @@ $(function() {
             success: function(data){
               $("select#Battery").show();
               $("#description").show();
+              $("select#Employee").show();
               // Clear all options from Battery select
               $("select#Battery option").remove();
               //put in a empty default line
