@@ -57,4 +57,11 @@ Rails.application.routes.draw do
 
   get 'ajax/:get_baterry_by_building', to: 'ajax#:get_baterry_by_building', :defaults => { :format => 'json' }
   get 'get_baterry_by_building/:building_id', to: 'request_intervention#get_baterry_by_building'
+
+  get 'ajax/:get_column_by_battery', to: 'ajax#:get_column_by_battery', :defaults => { :format => 'json' }
+  get 'get_column_by_battery/:battery_id', to: 'request_intervention#get_column_by_battery'
+
+  get 'ajax/:get_elevator_by_column', to: 'ajax#:get_elevator_by_column', :defaults => { :format => 'json' }
+  get 'get_elevator_by_column/:column_id', to: 'request_intervention#get_elevator_by_column'
+
 end

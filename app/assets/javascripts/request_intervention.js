@@ -63,10 +63,69 @@ $(function() {
               $(row).appendTo("select#Battery");
                // Fill course select
                $.each(data, function(i, j) {
-                row = "<option value=\"" + j.id + "\">" + "Baterry id: " +  j.id + "</option>";
+                row = "<option value=\"" + j.id + "\">" + "Batterry id: " +  j.id + "</option>";
                 $(row).appendTo("select#Battery");
               });
-                // column stat
+                // get column to a specific batterry
+                $("select#Battery").change(function(){
+                   var id_value_string = $(this).val();
+                   if (id_value_string == ""){
+                    $("select#Column").hide();
+                    $("select#Elevator").hide();
+                  }
+                  $.ajax({
+                    dataType: "json",
+                    cache: false,
+                    url: '/get_column_by_battery/' + id_value_string,
+                    timeout: 5000,
+                    error: function(XMLHttpRequest, errorTextStatus, error) {
+                      alert("Failed to submit : " + errorTextStatus + " ;" + error);
+                    },
+                    success: function(data){
+                      $("select#Column").show();
+                      // Clear all options from Column select
+                      $("select#Column option").remove();
+                       //put in a empty default line
+                      var row = "<option value=\"" + "" + "\">" + "Column" + "</option>";
+                      $(row).appendTo("select#Column");
+                      // Fill course select
+                      $.each(data, function(i, j){
+                        row = "<option value=\"" + j.id + "\">" + "Column id: " +  j.id + "</option>";
+                        $(row).appendTo("select#Column");
+                      });
+                      // get Elevator for specific column
+                      $("select#Column").change(function(){
+                         var id_value_string = $(this).val();
+                         if (id_value_string == ""){
+                          $("select#Elevator").hide();
+                        }
+                        $.ajax({
+                          dataType: "json",
+                          cache: false,
+                          url: '/get_elevator_by_column/' + id_value_string,
+                          timeout: 5000,
+                          error: function(XMLHttpRequest, errorTextStatus, error) {
+                            alert("Failed to submit : " + errorTextStatus + " ;" + error);
+                          },
+                          success: function(data){
+                            $("select#Elevator").show();
+                            // Clear all options from Column select
+                            $("select#Elevator option").remove();
+                            //put in a empty default line
+                            var row = "<option value=\"" + "" + "\">" + "Elevator" + "</option>";
+                            $(row).appendTo("select#Elevator");
+                            // Fill course select
+                            $.each(data, function(i, j){
+                               row = "<option value=\"" + j.id + "\">" + "Elevator id: " +  j.id + "</option>";
+                               $(row).appendTo("select#Elevator");
+                            });
+                          }
+                        });
+                      });
+                    }
+
+                  });
+                });
             }
            })
          });

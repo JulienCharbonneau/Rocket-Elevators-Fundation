@@ -9,9 +9,9 @@
 
 	<%= select_tag "Battery", options_from_collection_for_select(Battery.all, "id", "building_id"), prompt: "Battery", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
 
-	<%= select_tag "Column", options_from_collection_for_select(Column.all, "id", "id"), prompt: "Column", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
+	<%= select_tag "Column", options_from_collection_for_select(Column.all, "id", "battery_id"), prompt: "Column", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
 	
-	<%= select_tag "Elevator", options_from_collection_for_select(Elevator.all, "id", "id"), prompt: "Elevator", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
+	<%= select_tag "Elevator", options_from_collection_for_select(Elevator.all, "id", "column_id"), prompt: "Elevator", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
 
 
 
