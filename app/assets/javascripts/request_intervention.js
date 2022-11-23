@@ -1,5 +1,7 @@
 $(function() {
-  console.log($("select#Customer").val());
+   $(":submit").click(function(){
+    alert("Your Request is send");
+   })
   
   if ($("select#Customer").val() == "") {
     $("select#Building").hide();
