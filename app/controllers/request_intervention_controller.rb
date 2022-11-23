@@ -1,12 +1,12 @@
-require "json"
 
+  require "json"
 
 class RequestInterventionController < ApplicationController
+  respond_to :html, :json
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
   def intervention_form
-    get_customer()
-    get_building_by_customer()
+    
   end
 
   def create 
@@ -18,23 +18,17 @@ class RequestInterventionController < ApplicationController
 
  
 
- def get_customer
-  @customer = []
-
-  Customer.all.each  do |customer|
-    @customer.push(customer)
-  end
 
 
-  puts "==================================="
-end
 
 def get_building_by_customer
-  puts "+++++++++++++++++++++++="
-  puts params[:customer_id]
-  # @building = Building.where("customer_id = ?", params[:customer_id])
-  # respond_to do |format|
-  #   format.json { render :json => @building }
-  # end
-end
+  @building = Building.where("customer_id = ?", params[:customer_id])
+  respond_with(@building)
+  end
+
+  def get_baterry_by_building
+    @baterry = Baterry.where("building_id = ?", params[:building_id])
+    respond_with(@baterry)
+    end
+
 end

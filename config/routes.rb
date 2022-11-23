@@ -52,7 +52,9 @@ Rails.application.routes.draw do
   get '/request_intervention', to: 'request_interventions#intervention_form'
   post '/request_intervention', to: 'request_intervention#create'
   
+  get 'ajax/:get_building_by_customer', to: 'ajax#:get_building_by_customer', :defaults => { :format => 'json' }
+  get 'get_building_by_customer/:customer_id', to: 'request_intervention#get_building_by_customer'
 
-  # get 'get_building_by_customer/:customer_id', to: 'building#get_building_by_customer'
+  get 'ajax/:get_baterry_by_building', to: 'ajax#:get_baterry_by_building', :defaults => { :format => 'json' }
+  get 'get_baterry_by_building/:building_id', to: 'request_intervention#get_baterry_by_building'
 end
-

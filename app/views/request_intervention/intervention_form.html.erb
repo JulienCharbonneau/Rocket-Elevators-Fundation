@@ -3,21 +3,22 @@
 
     <%= form_tag('request_intervention', method: "post", class: "form-inline", remote: true) do %>
 
-	<%= select_tag "Elevator", options_from_collection_for_select(Elevator.all, "id", "id"), prompt: "Elevator", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
+    <%= select_tag "Customer", options_from_collection_for_select(Customer.all, "id", "company_name"), prompt: "Customer", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
+
+	<%= select_tag "Building", options_from_collection_for_select(Building.all, "customer_id", "buildingAddress"), prompt: "Building", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
+
+	<%= select_tag "Battery", options_from_collection_for_select(Battery.all, "id", "building_id"), prompt: "Battery", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
 
 	<%= select_tag "Column", options_from_collection_for_select(Column.all, "id", "id"), prompt: "Column", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
+	
+	<%= select_tag "Elevator", options_from_collection_for_select(Elevator.all, "id", "id"), prompt: "Elevator", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
 
-	<%= select_tag "Battery", options_from_collection_for_select(Battery.all, "id", "id"), prompt: "Battery", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
 
-	<%= select_tag "Building", options_from_collection_for_select(Building.all, "id", "buildingAddress"), prompt: "Building", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
 
-    <%= select_tag "Customer", options_from_collection_for_select(Customer.all, "id", "company_name"), prompt: "Customer", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
+
    
     <%= submit_tag("Submit", class: "btn btn-primary") %>
 <% end %>
   </div>
 </div>
 
-<div class="row" id="course_listing">
-  <%# <%= render partial: "course_list", locals: {courses: @courses} %> 
-</div>
