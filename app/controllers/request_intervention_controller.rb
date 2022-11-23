@@ -26,9 +26,12 @@ def get_building_by_customer
   respond_with(@building)
   end
 
-  def get_baterry_by_building
-    @baterry = Baterry.where("building_id = ?", params[:building_id])
-    respond_with(@baterry)
-    end
+def get_baterry_by_building
+  puts "=================="
+  @battery = Battery.where("building_id = ?", params[:building_id])
+  respond_with(@battery)
+
+ 
+  end
 
 end
