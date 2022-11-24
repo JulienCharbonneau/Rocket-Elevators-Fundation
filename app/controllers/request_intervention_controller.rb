@@ -51,7 +51,7 @@ class RequestInterventionController < ApplicationController
     
     json_payload = { status: 2,  
         priority: 1,
-        type: "Feature Request",
+        type: "Incident",
         subject: "Request",
         name: params[:Employee],
         unique_external_id: params[:Employee],
