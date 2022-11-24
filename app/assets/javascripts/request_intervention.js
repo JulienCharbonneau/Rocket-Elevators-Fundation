@@ -150,6 +150,12 @@ $(function() {
     });
     
   }); 
+
+  $("select#Employee").change(function(){
+    $("h4").hide();
+
+  });
+  
   $("select#Elevator").change(function(){
     $("h4").hide();
 
