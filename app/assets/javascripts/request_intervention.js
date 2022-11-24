@@ -1,7 +1,5 @@
 $(function() {
-  //  $(":submit").click(function(){
-  //   alert("Your Request is send");
-  //  })
+  
   
   if ($("select#Customer").val() == "") {
     $("select#Building").hide();
@@ -10,17 +8,22 @@ $(function() {
     $("select#Elevator").hide();
     $("#description").hide();
     $("select#Employee").hide();
+    $("h4").hide();
+
+
 
 
   } 
   // get building for specific customer
   $("select#Customer").change(function(){
+    $("h4").hide();
     var id_value_string = $(this).val();
     if (id_value_string == ""){
       $("select#Building").hide();
       $("select#Battery").hide();
       $("select#Column").hide();
       $("select#Elevator").hide();
+
     }
     $.ajax({
       dataType: "json",
@@ -46,6 +49,7 @@ $(function() {
          });
         //  get batery for specific building
          $("select#Building").change(function(){
+          $("h4").hide();
           var id_value_string = $(this).val();
           if (id_value_string == ""){
               $("select#Battery").hide();
@@ -76,10 +80,12 @@ $(function() {
               });
                 // get column to a specific batterry
                 $("select#Battery").change(function(){
+                  $("h4").hide();
                    var id_value_string = $(this).val();
                    if (id_value_string == ""){
                     $("select#Column").hide();
                     $("#description").hide();
+
                   }
                   $.ajax({
                     dataType: "json",
@@ -104,6 +110,7 @@ $(function() {
                       });
                       // get Elevator for specific column
                       $("select#Column").change(function(){
+                        $("h4").hide();
                          var id_value_string = $(this).val();
                          if (id_value_string == ""){
                           $("select#Elevator").hide();
@@ -143,5 +150,11 @@ $(function() {
     });
     
   }); 
+  $("select#Elevator").change(function(){
+    $("h4").hide();
 
+  });
+  $("form").submit(function(){
+    $("h4").show();
+   })
  });
