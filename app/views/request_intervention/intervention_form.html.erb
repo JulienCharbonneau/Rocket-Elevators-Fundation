@@ -4,7 +4,7 @@
 <div class="row no-gutters wow slideInUp" data-wow-duration="1s">
   <div class="col-md-12 home-form">
 
-    <%= form_tag('request_intervention', method: "post", class: "form-inline", remote: true) do %>
+    <%= form_tag('request_intervention',action:"/request", method: "post", class: "form-inline", remote: true) do %>
 
     <%= select_tag "Customer", options_from_collection_for_select(Customer.all, "id", "company_name"), prompt: "Customer", class: "custom-select mb-0 mr-sm-0 mb-sm-0" %>
 

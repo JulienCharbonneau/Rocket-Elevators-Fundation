@@ -64,4 +64,6 @@ Rails.application.routes.draw do
   get 'ajax/:get_elevator_by_column', to: 'ajax#:get_elevator_by_column', :defaults => { :format => 'json' }
   get 'get_elevator_by_column/:column_id', to: 'request_intervention#get_elevator_by_column'
 
+  post '/request', to: 'request_intervention#create'
+  
 end
