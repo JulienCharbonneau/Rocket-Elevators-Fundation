@@ -48,5 +48,22 @@ Rails.application.routes.draw do
 
   # form request intervention
   get '/request_intervention', to: 'request_intervention#intervention_form'
-end
 
+  get '/request_intervention', to: 'request_interventions#intervention_form'
+  post '/request_intervention', to: 'request_intervention#create'
+  
+  get 'ajax/:get_building_by_customer', to: 'ajax#:get_building_by_customer', :defaults => { :format => 'json' }
+  get 'get_building_by_customer/:customer_id', to: 'request_intervention#get_building_by_customer'
+
+  get 'ajax/:get_baterry_by_building', to: 'ajax#:get_baterry_by_building', :defaults => { :format => 'json' }
+  get 'get_baterry_by_building/:building_id', to: 'request_intervention#get_baterry_by_building'
+
+  get 'ajax/:get_column_by_battery', to: 'ajax#:get_column_by_battery', :defaults => { :format => 'json' }
+  get 'get_column_by_battery/:battery_id', to: 'request_intervention#get_column_by_battery'
+
+  get 'ajax/:get_elevator_by_column', to: 'ajax#:get_elevator_by_column', :defaults => { :format => 'json' }
+  get 'get_elevator_by_column/:column_id', to: 'request_intervention#get_elevator_by_column'
+
+  post '/request', to: 'request_intervention#create'
+  
+end
