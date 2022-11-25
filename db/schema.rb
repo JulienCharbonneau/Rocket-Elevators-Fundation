@@ -194,8 +194,8 @@ ActiveRecord::Schema.define(version: 2022_11_22_185528) do
     t.integer "column_id"
     t.integer "elevator_id"
     t.integer "employee_id", null: false
-    t.date "start_date"
-    t.date "end_date"
+    t.string "start_date"
+    t.string "end_date"
     t.string "result", default: "Incomplete "
     t.text "report", null: false
     t.string "status", default: "Pending"
