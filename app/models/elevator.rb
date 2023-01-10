@@ -5,29 +5,29 @@ require 'twilio-ruby'
 class Elevator < ApplicationRecord
     belongs_to :column 
 
-    # before_update :beforesms
-    # after_update :sms
+    before_update :beforesms
+    after_update :sms
 
-    # def beforesms
-    #     @oldstatus = status_was
-    # end
+    def beforesms
+        @oldstatus = status_was
+    end
     
-    # def sms
-    #     if status != @oldstatus && status.downcase == "intervention" 
-    #         account_sid = ENV['twilio_account_sid']
-    #         auth_token = ENV['twilio_auth_token']
-    #         client = Twilio::REST::Client.new(account_sid, auth_token)
+    def sms
+        if status != @oldstatus && status.downcase == "intervention" 
+            account_sid = ENV['twilio_account_sid']
+            auth_token = ENV['twilio_auth_token']
+            client = Twilio::REST::Client.new(account_sid, auth_token)
     
-    #         from = ENV['twilio_phone_number'] # Your Twilio number
-    #         to = '' # Your mobile phone number
+            from = ENV['twilio_phone_number'] # Your Twilio number
+            to = ENV['personal'] # Your mobile phone number
     
-    #         client.messages.create(
-    #         from: from,
-    #         to: to,
-    #         body: 'Hi Mr. Tech, the status of the elevator #' + id.to_s + ' has changed from "' + @oldstatus + '" to "' + status + '"! Can you please fix this?'
-    #         )
-    #     end 
-    # end
+            client.messages.create(
+            from: from,
+            to: to,
+            body: 'Hi Mr. Tech, the status of the elevator #' + id.to_s + ' has changed from "' + @oldstatus + '" to "' + status + '"! Can you please fix this?'
+            )
+        end 
+    end
 
 
 

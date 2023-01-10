@@ -11,9 +11,10 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 google_map_api_key: AIzaSyCLwvADPK2vhk5ypz889HsenDU3yhSm19M
-# twilio_account_sid: ACbe2941309c70f0f03975dc884b9e7ad4
-# twilio_auth_token: 82b45d72abd442754aef3c037f03ad5a
-# twilio_phone_number: "+18563861525"
+twilio_account_sid: AC7a2a3714a7013c21fc4d2d0266b4ac55
+twilio_auth_token: 00b7255b00e87540779243b78471c86e
+twilio_phone_number: "+12058395266"
+personal: "+14185755632"
 # slack_api_token: xoxb-461156293569-4329447238295-DDxX96DasByY078fRrwcqcoY
 AWSAccessKeyId: AKIAQ7JF4W2FZGIY2GVZ
 AWSSecretKey: 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
